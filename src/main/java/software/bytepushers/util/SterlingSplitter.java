@@ -30,7 +30,7 @@ public class SterlingSplitter {
                 lineBuffer.add(str);
                 if (lineBuffer.size() == recordsPerFile) {
                     Files.write(f, lineBuffer, StandardOpenOption.CREATE, StandardOpenOption.TRUNCATE_EXISTING);
-                    f = Files.createFile(pwd.resolve(nextFileName(nameExt, fileId++)));
+                    f = pwd.resolve(nextFileName(nameExt, fileId++));
                     lineBuffer.clear();
                 }
             }
@@ -43,7 +43,7 @@ public class SterlingSplitter {
         }
     }
 
-    private String nextFileName(String[] nameExt, int n) {
+    public static String nextFileName(String[] nameExt, int n) {
         return nameExt[0] + '-' + n + '.' + nameExt[1];
     }
 
