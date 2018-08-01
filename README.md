@@ -10,7 +10,7 @@ Jar output is present in target/stersplit.jar
 
 Run
 ```
-> java -jar strsplit.jar <filename> <lines-per-file> 
+> java -jar strsplit.jar <filename> <lines-per-file> [optional output directory]
 ```
 
-Output files are written to the working directory.
+Output files are written to the working directory by default. Specifying an optional output directory is possible.
